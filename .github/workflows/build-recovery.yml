@@ -188,7 +188,7 @@ jobs:
           echo "compressed_file=$ZIP_FILE" >> $GITHUB_OUTPUT
 
       - name: Upload Recovery ISO artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: macOS-${{ steps.version_info.outputs.version_name }}-Recovery-ISO
           path: ${{ steps.compress_iso.outputs.compressed_file }}
