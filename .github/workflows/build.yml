@@ -257,7 +257,7 @@ jobs:
 
       - name: Upload ISO artifact
         if: github.event.inputs.image_format == 'iso'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: macOS-${{ github.event.inputs.macos_version }}-${{ steps.fetch_installers.outputs.version }}-ISO
           path: ${{ steps.create_iso.outputs.image_file }}
@@ -266,7 +266,7 @@ jobs:
 
       - name: Upload DMG artifact
         if: github.event.inputs.image_format == 'dmg'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: macOS-${{ github.event.inputs.macos_version }}-${{ steps.fetch_installers.outputs.version }}-DMG
           path: ${{ steps.create_dmg.outputs.image_file }}
